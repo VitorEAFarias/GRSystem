@@ -2,16 +2,19 @@ using Microsoft.EntityFrameworkCore;
 using GRSystem.DTO.Context;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using RO_Garantias.BLL.CLIENTESBLL;
+using RO_Garantias.DAL.CLIENTESDAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Connection strings
-string _conRSDB = string.Format(builder.Configuration.GetConnectionString("RSDB"), "REVENDA", "RESALE");
 string _conGADB = string.Format(builder.Configuration.GetConnectionString("GADB"), "GARANTIA", "WARRANTY");
 
 // Add services to the container.
-builder.Services.AddDbContextPool<RSDBContext>(options => options.UseOracle(_conRSDB));
-builder.Services.AddDbContextPool<GADBContext>(options => options.UseOracle(_conGADB));
+builder.Services.AddDbContext<GADBCONTEXT>(options => options.UseOracle(_conGADB, b => b.UseOracleSQLCompatibility("11")));
+
+builder.Services.AddScoped<ICLIENTESDAL, CLIENTESDAL>();
+builder.Services.AddScoped<ICLIENTESBLL, CLIENTESBLL>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -53,7 +56,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
 
-    app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "ROGarantias"));
+    app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "GRSystem"));
 
 }
 else
