@@ -1,6 +1,6 @@
-﻿using RO_Garantias.DTO;
+﻿using GRSystem.DTO;
 
-namespace RO_Garantias.BLL.CLIENTESBLL
+namespace GRSystem.BLL.CLIENTESBLL
 {
     /// <summary>
     /// 
@@ -13,5 +13,11 @@ namespace RO_Garantias.BLL.CLIENTESBLL
         /// <param name="Id"></param>
         /// <returns></returns>
         Task<CLIENTESRODTO?> getCliente(int Id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Cgc"></param>
+        /// <returns></returns>
+        Task<CLIENTESRODTO?> getClienteROByCGC(string Cgc);
     }
 }

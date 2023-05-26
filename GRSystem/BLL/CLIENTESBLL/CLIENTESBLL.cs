@@ -1,7 +1,7 @@
-﻿using RO_Garantias.DAL.CLIENTESDAL;
-using RO_Garantias.DTO;
+﻿using GRSystem.DAL.CLIENTESDAL;
+using GRSystem.DTO;
 
-namespace RO_Garantias.BLL.CLIENTESBLL
+namespace GRSystem.BLL.CLIENTESBLL
 {
     /// <summary>
     /// 
@@ -34,6 +34,33 @@ namespace RO_Garantias.BLL.CLIENTESBLL
                 if (getCliente != null)
                 {
                     return getCliente;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Cgc"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public async Task<CLIENTESRODTO?> getClienteROByCGC(string Cgc)
+        {
+            try
+            {
+                var getCgc = await _cliente.getClienteROByCGC(Cgc);
+
+                if (getCgc != null)
+                {
+                    return getCgc;
                 }
                 else
                 {

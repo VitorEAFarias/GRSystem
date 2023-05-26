@@ -1,7 +1,8 @@
 ﻿using GRSystem.DTO.Context;
-using RO_Garantias.DTO;
+using Microsoft.EntityFrameworkCore;
+using GRSystem.DTO;
 
-namespace RO_Garantias.DAL.CLIENTESDAL
+namespace GRSystem.DAL.CLIENTESDAL
 {
     /// <summary>
     /// 
@@ -30,6 +31,16 @@ namespace RO_Garantias.DAL.CLIENTESDAL
         public async Task<CLIENTESRODTO?> getCliente(int Id)
         {
             return await _context.CLIENTES.FindAsync(Id);
+        }
+
+        /// <summary>
+        /// Consulta a view CLIENTES_REIS_OFFICE
+        /// </summary>
+        /// <param name="Cgc"></param>
+        /// <returns></returns>
+        public async Task<CLIENTESRODTO?> getClienteROByCGC(string Cgc)
+        {
+            return await _context.CLIENTES.FromSqlRaw("SELECT * FROM CLIENTES_REIS_OFFICE WHERE CNPJ = ' " + Cgc + " '").FirstOrDefaultAsync();
         }
     }
 }

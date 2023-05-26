@@ -1,9 +1,10 @@
-﻿using RO_Garantias.DTO;
+﻿using GRSystem.DTO;
 
-namespace RO_Garantias.DAL.CLIENTESDAL
+namespace GRSystem.DAL.CLIENTESDAL
 {
     public interface ICLIENTESDAL
     {
-        Task<CLIENTESRODTO?> getCliente(int Id);
+        Task<CLIENTESRODTO?> getCliente(int Id);        
+        Task<CLIENTESRODTO?> getClienteROByCGC(string Cgc);
     }
 }

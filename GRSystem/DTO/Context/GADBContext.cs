@@ -30,5 +30,9 @@ namespace GRSystem.DTO.Context
         /// 
         /// </summary>
         public DbSet<CLIENTESRODTO> CLIENTES { get; private set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<CADASTRODTO> CADASTRO { get; set; }
     }
 }

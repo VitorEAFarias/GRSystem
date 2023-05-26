@@ -1,4 +1,4 @@
-﻿namespace RO_Garantias.DTO
+﻿namespace GRSystem.DTO
 {
     /// <summary>
     /// 
@@ -24,22 +24,22 @@
         /// <summary>
         /// 
         /// </summary>
-        public virtual int ID { get; private set; }
+        public virtual int ID { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public virtual int ID_CLIENTE { get; private set; }
+        public virtual int ID_CLIENTE { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public virtual bool CLIENTE_RO { get; private set; }
+        public virtual bool CLIENTE_RO { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public virtual string SENHA { get; private set; }
+        public virtual string SENHA { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public virtual string EMAIL { get; private set; }
+        public virtual string EMAIL { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RO_Garantias.BLL.CLIENTESBLL;
+using GRSystem.BLL.CLIENTESBLL;
 
-namespace RO_Garantias.Controllers
+namespace GRSystem.Controllers
 {
     /// <summary>
     /// 

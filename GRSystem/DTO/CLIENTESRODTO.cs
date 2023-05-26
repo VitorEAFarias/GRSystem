@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RO_Garantias.DTO
+namespace GRSystem.DTO
 {
     /// <summary>
     /// 
